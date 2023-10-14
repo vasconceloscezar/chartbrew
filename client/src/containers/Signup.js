@@ -29,7 +29,7 @@ import {
   email as emailValidation,
   password as passwordValidation
 } from "../config/validations";
-import cbLogoSmall from "../assets/logo_blue.png";
+import nmstxLogo from "../assets/namastex_logo.png";
 import {
   negative, positive, secondary,
 } from "../config/colors";
@@ -132,30 +132,38 @@ function Signup(props) {
 
   return (
     <div style={styles.container(height)}>
-      <Grid.Container style={styles.mainGrid(height)} css={{ backgroundColor: "$backgroundContrast" }}>
+      <Grid.Container
+        style={styles.mainGrid(height)}
+        css={{ backgroundColor: "$backgroundContrast" }}
+      >
         <Grid xs={12} sm={6}>
           <Container xs>
-            <Row>
-              &nbsp;
-            </Row>
+            <Row>&nbsp;</Row>
             <Spacer size={1} />
             <Row justify="center">
               <Link to="/">
-                <img centered src={cbLogoSmall} width="70" alt="Chartbrew logo" />
+                <img
+                  centered
+                  src={nmstxLogo}
+                  width="150"
+                  alt="NMSTX logo"
+                />
               </Link>
             </Row>
             <Spacer size={1} />
             <Row>
               <Text h2>
-                {"Let's get you started with your new Chartbrew account"}
+                {"Let's get you started with your new NMSTX Reports account"}
               </Text>
             </Row>
             <Spacer y={1} />
 
-            <form onSubmit={(e) => {
-              e.preventDefault();
-              submitUser();
-            }}>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                submitUser();
+              }}
+            >
               <Row>
                 <Text>{"But first, how can we call you?"}</Text>
               </Row>
@@ -173,15 +181,13 @@ function Signup(props) {
                   value={name}
                   fullWidth
                   size="lg"
-                  />
+                />
               </Row>
               <Spacer y={1} />
               {errors.name && (
-              <Row>
-                <Text color={negative}>
-                  {"Please enter your name"}
-                </Text>
-              </Row>
+                <Row>
+                  <Text color={negative}>{"Please enter your name"}</Text>
+                </Row>
               )}
               <Row>
                 <Text>{"Enter your new sign in details"}</Text>
@@ -200,14 +206,12 @@ function Signup(props) {
                   value={email}
                   fullWidth
                   size="lg"
-                  />
+                />
               </Row>
               {errors.email && (
-              <Row>
-                <Text color={negative}>
-                  {"Please enter a valid email"}
-                </Text>
-              </Row>
+                <Row>
+                  <Text color={negative}>{"Please enter a valid email"}</Text>
+                </Row>
               )}
               <Spacer y={1} />
               <Row>
@@ -224,14 +228,12 @@ function Signup(props) {
                   value={password}
                   fullWidth
                   size="lg"
-                  />
+                />
               </Row>
               {errors.password && (
-              <Row>
-                <Text color={negative}>
-                  {errors.password}
-                </Text>
-              </Row>
+                <Row>
+                  <Text color={negative}>{errors.password}</Text>
+                </Row>
               )}
               <Spacer y={1} />
               <Row>
@@ -249,25 +251,41 @@ function Signup(props) {
                 </Button>
               </Row>
               {signupError && (
-              <Row>
-                <Text b color={negative}>{signupError.message || signupError}</Text>
-              </Row>
+                <Row>
+                  <Text b color={negative}>
+                    {signupError.message || signupError}
+                  </Text>
+                </Row>
               )}
               {addedToTeam && (
-              <Row>
-                <Text color={positive}>
-                  {"You created a new account and were added to the team. We will redirect you to your dashboard now..."}
-                </Text>
-              </Row>
+                <Row>
+                  <Text color={positive}>
+                    {
+                      "You created a new account and were added to the team. We will redirect you to your dashboard now..."
+                    }
+                  </Text>
+                </Row>
               )}
             </form>
 
             <Spacer y={1} />
             <Text size={14}>
-              {"By signing up for a Chartbrew account, you agree to our "}
-              <a href="https://github.com/razvanilin/chartbrew-docs/blob/master/TermsAndConditions.md" rel="noopener noreferrer" target="_blank">Terms of Service</a>
+              {"By signing up for a NMSTX Reports account, you agree to our "}
+              <a
+                href="https://github.com/razvanilin/chartbrew-docs/blob/master/TermsAndConditions.md"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Terms of Service
+              </a>
               {" and "}
-              <a href="https://github.com/razvanilin/chartbrew-docs/blob/master/PrivacyPolicy.md" rel="noopener noreferrer" target="_blank">Privacy Policy</a>
+              <a
+                href="https://github.com/razvanilin/chartbrew-docs/blob/master/PrivacyPolicy.md"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Privacy Policy
+              </a>
             </Text>
             <Spacer y={0.5} />
             <div>
@@ -275,7 +293,9 @@ function Signup(props) {
                 {" "}
                 Already have an account?
                 {" "}
-                <Link to={"/login"} style={styles.loginLink}>Login here</Link>
+                <Link to={"/login"} style={styles.loginLink}>
+                  Login here
+                </Link>
                 {" "}
               </Text>
             </div>
@@ -283,14 +303,27 @@ function Signup(props) {
         </Grid>
         <Grid xs={12} sm={6}>
           <div
-            style={sideHovered ? styles.sideBackground : styles.sideBackgroundBlurred}
+            style={
+              sideHovered ? styles.sideBackground : styles.sideBackgroundBlurred
+            }
             onMouseEnter={() => setSideHovered(true)}
             onMouseLeave={() => setSideHovered(false)}
           />
-          <Container sm style={styles.testimonialCard} css={{ "@smMax": { display: "none" } }}>
+          <Container
+            sm
+            style={styles.testimonialCard}
+            css={{ "@smMax": { display: "none" } }}
+          >
             <Card style={{ minWidth: 500, padding: 10 }}>
               <Card.Header>
-                <Avatar color="gradient" bordered squared size="lg" src={testimonialAvatar} alt="Fairchain testimonial" />
+                <Avatar
+                  color="gradient"
+                  bordered
+                  squared
+                  size="lg"
+                  src={testimonialAvatar}
+                  alt="Fairchain testimonial"
+                />
                 <Grid.Container css={{ pl: "$6" }}>
                   <Grid xs={12}>
                     <Text size={20} b css={{ lineHeight: "$xs" }}>
@@ -298,10 +331,21 @@ function Signup(props) {
                     </Text>
                   </Grid>
                   <Grid xs={12}>
-                    <Text css={{ color: "$accents8", flexDirection: "row", display: "flex" }}>
+                    <Text
+                      css={{
+                        color: "$accents8",
+                        flexDirection: "row",
+                        display: "flex",
+                      }}
+                    >
                       {"Full-stack Developer at "}
                       <Spacer x={0.2} />
-                      <LinkNext href="https://fairchain.art" rel="noopener noreferrer" target="_blank" color="secondary">
+                      <LinkNext
+                        href="https://fairchain.art"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        color="secondary"
+                      >
                         {"Fairchain"}
                       </LinkNext>
                     </Text>
@@ -309,7 +353,11 @@ function Signup(props) {
                 </Grid.Container>
               </Card.Header>
               <Card.Body>
-                <i>{"\"Chartbrew has helped us move away from having to constantly update clunky Google-based charts, but what most impresses me is the responsiveness and the helpfulness of the people behind Chartbrew. Highly recommend!\""}</i>
+                <i>
+                  {
+                    "\"NMSTX has helped us move away from having to constantly update clunky Google-based charts, but what most impresses me is the responsiveness and the helpfulness of the people behind NMSTX. Highly recommend!\""
+                  }
+                </i>
               </Card.Body>
             </Card>
           </Container>

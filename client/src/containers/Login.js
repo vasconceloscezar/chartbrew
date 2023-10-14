@@ -10,7 +10,7 @@ import _ from "lodash";
 import LoginForm from "../components/LoginForm";
 import { cleanErrors as cleanErrorsAction } from "../actions/error";
 import { negative } from "../config/colors";
-import cbLogoSmall from "../assets/logo_inverted.png";
+import nmstxLogo from "../assets/namastex_logo.png";
 
 /*
   Login container with an embedded login form
@@ -28,7 +28,12 @@ function Login(props) {
       <Container md>
         <Row justify="center" align="center">
           <Link to="/">
-            <img size="tiny" src={cbLogoSmall} style={{ width: 70 }} alt="Chartbrew logo" />
+            <img
+              size="tiny"
+              src={nmstxLogo}
+              style={{ width: 150 }}
+              alt="NmstxLogo"
+            />
           </Link>
         </Row>
         <Spacer y={1} />
@@ -38,7 +43,9 @@ function Login(props) {
               <Card style={styles.verticalPadding}>
                 <Card.Header css={{ textAlign: "center", ai: "center" }}>
                   <Container justify="center">
-                    <Text h3 css={{ marginTop: 0 }}>{"Welcome back to Chartbrew"}</Text>
+                    <Text h3 css={{ marginTop: 0 }}>
+                      {"Welcome back to NMSTX - Reports"}
+                    </Text>
                   </Container>
                 </Card.Header>
                 <Card.Body>
@@ -48,7 +55,9 @@ function Login(props) {
                   <Card.Footer>
                     <Container justify="center">
                       <Row justify="center">
-                        <Text h4 color={negative}>{loginError.message}</Text>
+                        <Text h4 color={negative}>
+                          {loginError.message}
+                        </Text>
                       </Row>
                       <Row justify="center">
                         <Text color={negative}>{"Please try again."}</Text>
